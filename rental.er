@@ -49,8 +49,9 @@ Person 1--1 Landlord
 Person 1--1 Tenant
 Tenant *--* Landlord
 Landlord 1--* Property
+Property 1--1 Appartment
 Building 1--1 Property
 Building 1--* Appartment
-Contract 1--1 Landlord
-Contract 1--+ Tenant
-Contract 1--1 Property
+Contract 1--1 Landlord {label: "landlord rents out property"}
+Contract 1--+ Tenant {label: "tenant(s) rent property"}
+Contract 1--1 Property {label: "property being rent out"}
