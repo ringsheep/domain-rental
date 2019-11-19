@@ -1,49 +1,49 @@
-[Person]
-*person_id
-first_name
-last_name
-birthdate
-citizenship
-phone_number
-email
+[Person] {bgcolor: "#d0e0d0"}
+*person_id {label: "usmallint, not null"}
+first_name {label: "varchar, not null"}
+last_name {label: "varchar, not null"}
+birthdate {label: "date, not null"}
+citizenship {label: "varchar, not null"}
+phone_number {label: "varchar, null"}
+email {label: "varchar, null"}
 
-[Landlord]
-*landlord_id
-+person_id
+[Landlord] {bgcolor: "#d0e0d0"}
+*landlord_id {label: "usmallint, not null"}
++person_id {label: "usmallint, not null"}
 
-[Tenant]
-*tenant_id
-+person_id
+[Tenant] {bgcolor: "#d0e0d0"}
+*tenant_id {label: "usmallint, not null"}
++person_id {label: "usmallint, not null"}
 
-[Property]
-*property_id
-+landlord_id
-address
-market_price
-floor_area
-rooms
+[Property] {bgcolor: "#ececfc"}
+*property_id {label: "usmallint, not null"}
++landlord_id {label: "usmallint, not null"}
+address {label: "varchar, not null"}
+market_price {label: "decimal, not null"}
+floor_area {label: "usmallint, not null"}
+rooms {label: "usmallint, not null"}
 
-[Building]
-*building_id
-+property_id
-construction_year
-floors
+[Building] {bgcolor: "#ececfc"}
+*building_id {label: "usmallint, not null"}
++property_id {label: "usmallint, not null"}
+construction_year {label: "usmallint, not null"}
+floors {label: "usmallint, not null"}
 
-[Appartment]
-*appartment_id
-+property_id
-+building_id
-floor
+[Appartment] {bgcolor: "#ececfc"}
+*appartment_id {label: "usmallint, not null"}
++property_id {label: "usmallint, not null"}
++building_id {label: "usmallint, not null"}
+floor {label: "usmallint, not null"}
 
-[Contract]
-*contract_id
-+property_id
-+landlord_id
-valid_until
-rent_amount
-pledge_amount
-sign_date
-terms
+[Contract] {bgcolor: "#fcecec"}
+*contract_id {label: "usmallint, not null"}
++property_id {label: "usmallint, not null"}
++landlord_id {label: "usmallint, not null"}
+valid_until {label: "date, not null"}
+rent_amount {label: "decimal, not null"}
+pledge_amount {label: "decimal, not null"}
+sign_date {label: "date, null"}
+terms {label: "varchar, not null"}
 
 Person 1--1 Landlord
 Person 1--1 Tenant
