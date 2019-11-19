@@ -34,3 +34,23 @@ floors
 +property_id
 +building_id
 floor
+
+[Contract]
+*contract_id
++property_id
++landlord_id
+valid_until
+rent_amount
+pledge_amount
+sign_date
+terms
+
+Person 1--1 Landlord
+Person 1--1 Tenant
+Tenant *--* Landlord
+Landlord 1--* Property
+Building 1--1 Property
+Building 1--* Appartment
+Contract 1--1 Landlord
+Contract 1--+ Tenant
+Contract 1--1 Property
