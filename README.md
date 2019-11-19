@@ -1,4 +1,5 @@
 # Rental domain ER model
+![Rental domain ER model](https://raw.githubusercontent.com/ringsheep/domain-rental/master/rental.png)
 This diagram illustrates a simple rental domain model and entities relationship. 
 Diagram was created using [erd](https://github.com/BurntSushi/erd) framework
 
